@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.3);
+    background: #fa4e4e;
+    color: #fff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.center {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 90px;
+    left: 90px;
+}
+
+.circle-big {
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    left: 65px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.484);
+    background: #fff;
+    animation: BigCirclePopUp 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.circle-medium {
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+    left: 80px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.484);
+    background: #fff;
+    animation: MediumCirclePopUp 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+
+}
+
+.circle-small {
+    position: absolute;
+    z-index: 3;
+    top: 95px;
+    left: 95px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.484);
+    background: #fff;
+    animation: SmallCirclePopUp 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+
+}
+
+@keyframes BigCirclePopUp {
+    0%, 10% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes MediumCirclePopUp {
+    0%, 40% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes SmallCirclePopUp {
+    0%, 70% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
