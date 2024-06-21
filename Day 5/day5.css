@@ -1,0 +1,308 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #1bb3b1;
+  color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.table {
+  position: absolute;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  height: 220px;
+  width: 280px;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.table .header {
+  position: relative;
+  background-color: #f4b44d;
+  height: 60px;
+  width: 100%;
+  color: #f3f3f3;
+}
+
+.table .header .big {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.table .header .small {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.table .header .title {
+  top: 12px;
+  left: 15px;
+}
+
+.table .header .date {
+  top: 30px;
+  left: 15px;
+}
+
+.table .header .type {
+  top: 14px;
+  right: 15px;
+}
+
+.table .header .value {
+  top: 28px;
+  right: 15px;
+}
+
+.params {
+  text-align: center;
+  padding: 10px 0 14px 0;
+}
+
+.table .params span {
+  position: relative;
+  font-size: 9px;
+  color: #333;
+  line-height: 13px;
+  padding: 0 10px 0 25px;
+}
+
+.table .params span:before {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  display: block;
+  content: "";
+  width: 11px;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.table .params .red:before {
+  background: #FA7373;
+}
+
+.table .params .blue:before {
+  background: #7BA2FF;
+}
+
+.table .statistics {
+  position: relative;
+  height: 81px;
+  width: 260px;
+  margin: 0 auto;
+}
+
+.table .statistics .line-1, .line-2, .line-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px; 
+  background: #F2F2F2;
+}
+
+.table .statistics .line-2 {
+  top: 40px;
+}
+
+.table .statistics .line-3 {
+  top: 80px;
+}
+
+.table .statistics .data svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.table .statistics .data polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.red polyline {
+  stroke: #FA7373;
+}
+
+.blue polyline {
+  stroke: #7BA2FF;
+}
+
+.table .statistics .data.blue [class^=dot-],
+  .table .statistics .data.blue .tooltip,
+  .table .statistics .data.blue .tooltip:after {
+    background-color: #7BA2FF;
+}
+
+.table .statistics .data.red [class^=dot-],
+  .table .statistics .data.red .tooltip,
+  .table .statistics .data.red .tooltip:after {
+    background-color: #FA7373;
+}
+
+.table .statistics .data [class^=dot-] {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.table .statistics .data [class^=dot-]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.table .statistics .data.red [class^=dot-]:after .tooltip {
+  background-color: #FA7373;
+}
+
+.table .statistics .data.blue [class^=dot-]:after .tooltip {
+  background-color: #7BA2FF;
+}
+
+.table .statistics .data .tooltip {
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  transform: translate3d(-50%, 10px, 0);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 11px;
+  color: #fff;
+  padding: 8px 6px;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.table .statistics .data .tooltip:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  bottom: -3px;
+  transform: rotate(45deg);
+}
+
+/* Red Dots */
+.table .statistics .data.red .dot-1 {
+  left: 7px;
+  top: 21px;
+}
+
+.table .statistics .data.red .dot-2 {
+  left: 48px;
+  top: 17px;
+}
+
+.table .statistics .data.red .dot-3 {
+  left: 88px;
+  top: 13px;
+}
+
+.table .statistics .data.red .dot-4 {
+  left: 128px;
+  top: 17px;
+}
+
+.table .statistics .data.red .dot-5 {
+  left: 169px;
+  top: 21px;
+}
+
+.table .statistics .data.red .dot-6 {
+  left: 209px;
+  top: 13px;
+}
+
+.table .statistics .data.red .dot-7 {
+  left: 249px;
+  top: 9px;
+}
+
+/* Blue Dots */
+.table .statistics .data.blue .dot-1 {
+  left: 7px;
+  top: 57px;
+}
+
+.table .statistics .data.blue .dot-2 {
+  left: 48px;
+  top: 61px;
+}
+
+.table .statistics .data.blue .dot-3 {
+  left: 88px;
+  top: 53px;
+}
+
+.table .statistics .data.blue .dot-4 {
+  left: 128px;
+  top: 57px;
+}
+
+.table .statistics .data.blue .dot-5 {
+  left: 169px;
+  top: 61px;
+}
+
+.table .statistics .data.blue .dot-6 {
+  left: 209px;
+  top: 57px;
+}
+
+.table .statistics .data.blue .dot-7 {
+  left: 249px;
+  top: 53px;
+}
+
+.table .weekdays {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.table .weekdays .day {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 14.2857142857%;
+  font-size: 9px;
+  line-height: 30px;
+  color: #949494;
+  text-transform: uppercase;
+}
